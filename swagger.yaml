@@ -1,0 +1,103 @@
+swagger: "2.0"
+info:
+  description: "This is the Swagger API Documentation for Topic Of The Day Web Application"
+  version: "1.0.0"
+  title: "Topic Of The Day"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "arnavakula3@gmail.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "topicoftheday.herokuapp.com"
+tags:
+- name: "user"
+  description: "Login Credentials"
+- name: "topic"
+  description: "topics "
+
+schemes:
+- "https"
+
+paths:
+  /user:
+    get:
+      tags:
+      - "user"
+      summary: "Get details of user"
+      description: ""
+      operationId: "getUser"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        "405":
+          description: "Invalid input"
+    post:
+      tags:
+      - "user"
+      summary: "user registration"
+      description: ""
+      operationId: "Register"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        "405":
+          description: "Invalid input"
+
+   
+
+  /topic:
+          
+    get:
+      tags:
+      - "topic"
+      summary: "Get a topic"
+      description: ""
+      operationId: "getTopic"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        "405":
+          description: "Invalid input"
+    post:
+      tags:
+      - "topic"
+      summary: "Add a topic"
+      description: ""
+      operationId: "addTopic"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        "405":
+          description: "Invalid input"
+          
+definitions:
+  User:
+    type: object
+    required:
+    - id
+    properties:
+      id:
+        type: integer
+  topic:
+    required:
+    - topic name
+    properties:
+      name:
+        type: string
+      id:
+        type: integer
+
+
+  
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
